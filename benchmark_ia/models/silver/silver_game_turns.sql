@@ -15,7 +15,8 @@ SELECT
     decision::VARCHAR AS decision,
     nearest_gold_distance::FLOAT AS nearest_gold_distance,
     is_useless_move::BOOLEAN AS is_useless_move,
-    
+    initial_gold::INT AS initial_gold,
+    coins_collected::INT AS coins_collected,
     nearest_gold_distance - LAG(nearest_gold_distance) OVER (PARTITION BY run_id ORDER BY turn) AS distance_delta
-
+    
 FROM raw_data
