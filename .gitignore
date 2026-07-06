@@ -1,2 +1,6 @@
 .env
 silver/
+
+# ignore all parquet files
+*.parquet
+data/**/*.parquet

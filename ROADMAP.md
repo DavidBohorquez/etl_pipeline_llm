@@ -20,7 +20,10 @@ Aligned to `SPECS.md`. Grading: benchmark /8, data engineering /8, consignes /4.
 ## Benchmark axes (§2.1)
 1. Algorithmic load: `raw` × `hint` × `solved`.
 2. LLM model: `model_name`, `model_params_b`.
-3. LLM sampling: `temperature`, `seed`.
+3. LLM sampling: temperature sweep `[0.0, 0.2, 0.3, 0.5, 0.7]` × `N_SEEDS` repetitions.
+   - `temp=0` is deterministic → 1 seed. `temp>0` → N seeds to estimate mean/variance.
+   - Story: robustness vs temperature per algo level — `raw` degrades fast, `hint` stays stable, `solved` is temperature-immune.
+   - Default grid = `(1+5+5+5+5) × 3 algos = 63 runs`.
 
 ## KPIs (§2.2) — computed in the gold layer
 - `steps_to_first_coin`, `steps_per_coin`
