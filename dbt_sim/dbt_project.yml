@@ -1,0 +1,22 @@
+name: 'dbt_sim'
+version: '1.0.0'
+config-version: 2
+
+profile: 'sim'
+
+model-paths: ["models"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+# Chemin vers la couche bronze (parquet). Suppose `dbt run` lance depuis dbt_sim/.
+vars:
+  bronze_path: "../data/bronze"
+
+models:
+  dbt_sim:
+    staging:
+      +materialized: view
+    silver:
+      +materialized: table
+    gold:
+      +materialized: table

@@ -1,0 +1,7 @@
+sim:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: sim.duckdb
+      threads: 4

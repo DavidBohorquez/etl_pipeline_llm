@@ -48,11 +48,11 @@ Schema coherence: every row carries `schema_version`; one parquet file per `run_
 ## Step-by-step
 
 1. ✅ Stabilize sim: directional perception, deterministic combat, 3 algo levels.
-2. ⏳ **Bronze**: runs/turns split, `make_config`, parquet write, benchmark runner. *(this step)*
-3. Benchmark runner grid: `algo_level × model × temperature × seed` → many runs → bronze.
-4. dbt-duckdb project (`dbt_sim/`): sources over bronze parquet → silver → gold KPIs.
-5. Dataviz report reading gold; rebuild via `dbt run + rebuild dataviz` per run.
-6. Justification write-up: defend every design/KPI choice (spec line 3).
+2. ✅ **Bronze**: runs/turns split, `make_config`, parquet write, benchmark runner.
+3. ✅ Benchmark runner grid: `algo_level × temperature × seed` → 63 runs → bronze.
+4. ✅ dbt-duckdb project (`dbt_sim/`): bronze parquet → silver → gold KPIs.
+5. ✅ Dataviz report (`reporting/app.py`, Streamlit) reading gold; rebuild via `dbt run` + refresh.
+6. ⏳ Justification write-up: defend every design/KPI choice (spec line 3).
 
 ## Repo layout (target)
 ```
