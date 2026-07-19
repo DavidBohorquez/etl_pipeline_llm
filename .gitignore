@@ -1,5 +1,6 @@
 .env
 silver/
+ROADMAP.md
 
 # ignore all parquet files
 *.parquet
