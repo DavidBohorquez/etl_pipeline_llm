@@ -3,7 +3,7 @@
 Simulation d'agent LLM dans une grille (collecte d'or, combats déterministes) instrumentée
 pour produire un pipeline de data engineering complet (bronze → silver → gold) et un rapport
 de benchmark. Spec complète dans [SPECS.md](SPECS.md), décisions de design et avancement dans
-[ROADMAP.md](ROADMAP.md).
+[Design decicions clés](#design-decisions-clés). 
 
 ## Pipeline
 
